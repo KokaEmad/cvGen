@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Print styles ─────────────────────────────────────── */
+@media print {
+  /* Reset page */
+  @page {
+    size: A4;
+    margin: 12mm 16mm;
+  }
+
+  html, body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Hide everything except the preview */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* The preview wrapper — strip layout constraints */
+  #resume-preview {
+    box-shadow: none;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Let the preview container scroll/overflow naturally */
+  .print\:bg-white {
+    overflow: visible !important;
+    height: auto !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  /* Ensure the flex layout doesn't clip content */
+  main {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+}
