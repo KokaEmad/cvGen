@@ -200,7 +200,6 @@ export function exportPdf(state) {
 
       case "skills":
         for (const it of section.items) {
-          const text = it.category ? it.category + ": " + it.items : it.items;
           checkPage(4);
           if (it.category) {
             doc.setFont("times", "bold");
@@ -305,6 +304,6 @@ export function exportPdf(state) {
   /* ── Save ───────────────────────────────────── */
 
   const filename =
-    (personalInfo.name || "resume").replace(/\s+/g, "_") + "_CV.pdf";
+    (personalInfo.name || "resume").replace(/[^a-zA-Z0-9-_ ]/g, "").replace(/\s+/g, "_") + "_CV.pdf";
   doc.save(filename);
 }

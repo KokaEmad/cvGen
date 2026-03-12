@@ -49,7 +49,7 @@ A fully client-side, split-screen CV/resume generator built with **React** and *
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/cvGen.git
+git clone https://github.com/YOUR_USERNAME/cvGen.git
 cd cvGen
 
 # Install dependencies
@@ -95,7 +95,6 @@ This repo includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) th
 ```text
 cvGen/
 ├── .github/workflows/deploy.yml   # GitHub Actions deployment
-├── public/                         # Static assets
 ├── src/
 │   ├── components/
 │   │   ├── AppHeader.jsx           # Top bar with Download PDF button

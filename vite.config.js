@@ -6,4 +6,10 @@ export default defineConfig({
   // For GitHub Pages: set base to "/<repo-name>/" before deploying.
   // e.g. base: "/cvGen/",
   base: "/cvGen/",
+  build: {
+    rollupOptions: {
+      // Exclude unused jsPDF optional deps (only needed for .html() method)
+      external: ["html2canvas", "canvg", "dompurify"],
+    },
+  },
 });

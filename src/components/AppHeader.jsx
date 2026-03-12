@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useCv } from "../store/CvContext.jsx";
-import { exportPdf } from "../utils/exportPdf.js";
 
 export default function AppHeader() {
   const { state } = useCv();
@@ -9,7 +8,8 @@ export default function AppHeader() {
   const handleExport = async () => {
     setLoading(true);
     try {
-      await exportPdf(state);
+      const { exportPdf } = await import("../utils/exportPdf.js");
+      exportPdf(state);
     } catch (err) {
       console.error("PDF export failed:", err);
       alert("PDF export failed: " + (err.message || err));
