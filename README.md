@@ -19,6 +19,7 @@ A fully client-side, split-screen CV/resume generator built with **React** and *
   - Custom (free-form)
 - **Bullet points** — add/remove per entry in experience, education, projects, volunteer, and custom sections
 - **Real-time preview** — updates instantly as you type
+- **Responsive layout** — optimized for desktop and tablet
 - **PDF export** — one-click download via jsPDF, ATS-friendly selectable text, A4 format
 - **ATS-friendly layout** — single column, standard serif fonts, clear headings, no tables/images
 - **Print-friendly** — `Ctrl+P` prints only the resume preview
@@ -95,6 +96,7 @@ This repo includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) th
 ```text
 cvGen/
 ├── .github/workflows/deploy.yml   # GitHub Actions deployment
+├── public/                         # Static assets (icons, images)
 ├── src/
 │   ├── components/
 │   │   ├── AppHeader.jsx           # Top bar with Download PDF button

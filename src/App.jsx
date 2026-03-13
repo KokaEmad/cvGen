@@ -8,13 +8,13 @@ export default function App() {
     <CvProvider>
       <div className="h-screen flex flex-col">
         <AppHeader />
-        <main className="flex-1 flex overflow-hidden">
+        <main className="flex-1 flex flex-col md:flex-row overflow-hidden">
           {/* Editor — left side */}
-          <div className="w-1/2 border-r border-gray-200 bg-gray-50">
+          <div className="md:w-1/2 md:border-r border-gray-200 bg-gray-50">
             <EditorPanel />
           </div>
           {/* Live Preview — right side */}
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <PreviewPanel />
           </div>
         </main>
