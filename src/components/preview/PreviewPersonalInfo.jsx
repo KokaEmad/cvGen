@@ -6,9 +6,9 @@ export default function PreviewPersonalInfo({ info }) {
   if (!name && contactParts.length === 0 && !summary) return null;
 
   return (
-    <div className="text-center mb-2">
+    <div className="text-center mb-8">
       {name && (
-        <h1 className="text-[22px] font-bold tracking-wide text-gray-900 leading-tight">
+        <h1 className="text-[22px] font-bold tracking-wide text-gray-900 leading-snug">
           {name}
         </h1>
       )}
@@ -22,7 +22,7 @@ export default function PreviewPersonalInfo({ info }) {
       )}
       {summary && (
         <>
-          <hr className="my-1.5 border-gray-300" />
+          <hr className="my-2 border-gray-300" />
           <p className="text-[11px] text-gray-700 text-left leading-[1.45]">{summary}</p>
         </>
       )}

@@ -24,10 +24,15 @@ export function exportPdf(state) {
     }
   }
 
-  /** Wrap text to fit width, return array of lines. */
+  /** Wrap text to fit width and preserve explicit newlines. */
   function wrap(text, fontSize, maxW = CONTENT_W) {
     doc.setFontSize(fontSize);
-    return doc.splitTextToSize(text, maxW);
+    return String(text || "")
+      .split(/\r?\n/)
+      .flatMap((part) => {
+        if (part === "") return [""];
+        return doc.splitTextToSize(part, maxW);
+      });
   }
 
   function drawText(text, x, fontSize, opts = {}) {
@@ -41,8 +46,8 @@ export function exportPdf(state) {
     doc.setFont(font, style);
     doc.setFontSize(fontSize);
     doc.setTextColor(...color);
-    const lines = doc.splitTextToSize(text, maxWidth);
-    const lineH = fontSize * 0.4;
+    const lines = wrap(text, fontSize, maxWidth);
+    const lineH = fontSize * 0.5;
     for (const line of lines) {
       checkPage(lineH);
       doc.text(line, x, y, { align });
