@@ -50,7 +50,7 @@ A fully client-side, split-screen CV/resume generator built with **React** and *
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/cvGen.git
+git clone https://github.com/KokaEmad/cvGen.git
 cd cvGen
 
 # Install dependencies
