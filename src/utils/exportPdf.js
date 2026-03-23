@@ -98,8 +98,7 @@ export function exportPdf(state) {
   }
 
   if (personalInfo.summary) {
-    y += 1;
-    drawLine();
+    sectionHeading("Professional Summary");
     drawText(personalInfo.summary, MARGIN, 9.5, { color: [50, 50, 50] });
   }
 

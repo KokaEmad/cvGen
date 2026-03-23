@@ -22,7 +22,9 @@ export default function PreviewPersonalInfo({ info }) {
       )}
       {summary && (
         <>
-          <hr className="my-2 border-gray-300" />
+          <h2 className="text-[13px] font-bold uppercase tracking-wider text-gray-900 border-b border-gray-400 pb-0.5 mt-3 mb-1 text-left">
+            Professional Summary
+          </h2>
           <p className="text-[11px] text-gray-700 text-left leading-[1.45]">{summary}</p>
         </>
       )}
